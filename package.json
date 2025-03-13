@@ -1,0 +1,33 @@
+{
+  "name": "1",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "watch": "run-p watch:*",
+    "watch:ui": "npm run build:ui -- --watch",
+    "watch:plugin": "npm run build:plugin -- --watch",
+    "build:ui": "vite build --config vite.ui.config.ts",
+    "build:plugin": "vite build --config vite.plugin.config.ts"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@figma/plugin-typings": "^1.108.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "vite-plugin-singlefile": "^2.2.0"
+  }
+}
