@@ -1,40 +1,122 @@
-Below are the steps to get your plugin running. You can also find instructions at:
+# Figma React Plugin Template
 
-  https://www.figma.com/plugin-docs/plugin-quickstart-guide/
+English | [简体中文](./README.zh-CN.md)
 
-This plugin template uses Typescript and NPM, two standard tools in creating JavaScript applications.
+A modern Figma plugin template built with React, TypeScript, and Vite.
 
-First, download Node.js which comes with NPM. This will allow you to install TypeScript and other
-libraries. You can find the download link here:
+## 📋 Overview
 
-  https://nodejs.org/en/download/
+This template provides a starting point for developing Figma plugins using React for the UI and TypeScript for type safety. The project is set up with Vite for fast development and building.
 
-Next, install TypeScript using the command:
+The example plugin creates rectangles based on user input, demonstrating communication between the plugin code and the UI.
 
-  npm install -g typescript
+**This template is intentionally lightweight and minimal, with no unnecessary dependencies or boilerplate code. It provides just the essential structure needed for a Figma plugin, making it perfect for developers who want to start from a clean slate and customize according to their specific needs.**
 
-Finally, in the directory of your plugin, get the latest type definitions for the plugin API by running:
+## 🚀 Features
 
-  npm install --save-dev @figma/plugin-typings
+- React 19 for UI components
+- TypeScript for type safety
+- Vite for fast development and building
+- ESLint for code quality
+- Hot module replacement during development
+- Optimized production builds
 
-If you are familiar with JavaScript, TypeScript will look very familiar. In fact, valid JavaScript code
-is already valid Typescript code.
+## 🛠️ Getting Started
 
-TypeScript adds type annotations to variables. This allows code editors such as Visual Studio Code
-to provide information about the Figma API while you are writing code, as well as help catch bugs
-you previously didn't notice.
+### Prerequisites
 
-For more information, visit https://www.typescriptlang.org/
+- [Node.js](https://nodejs.org/) (v18 or newer recommended)
+- [Figma Desktop App](https://www.figma.com/downloads/)
 
-Using TypeScript requires a compiler to convert TypeScript (code.ts) into JavaScript (code.js)
-for the browser to run.
+### Installation
 
-We recommend writing TypeScript code using Visual Studio code:
+1. Clone this repository or use it as a template
+2. Install dependencies:
 
-1. Download Visual Studio Code if you haven't already: https://code.visualstudio.com/.
-2. Open this directory in Visual Studio Code.
-3. Compile TypeScript to JavaScript: Run the "Terminal > Run Build Task..." menu item,
-    then select "npm: watch". You will have to do this again every time
-    you reopen Visual Studio Code.
+```bash
+npm install
+```
 
-That's it! Visual Studio Code will regenerate the JavaScript file every time you save.
+### Development
+
+Run the development server with:
+
+```bash
+npm run watch
+```
+
+This will:
+- Build the plugin code
+- Build the UI code
+- Watch for changes and rebuild automatically
+
+### Building for Production
+
+Build the plugin for production with:
+
+```bash
+npm run build:ui && npm run build:plugin
+```
+
+## 🔌 Loading the Plugin in Figma
+
+1. Open the Figma desktop app
+2. Create a new design file or open an existing one
+3. Go to **Plugins > Development > Import plugin from manifest...**
+4. Select the `manifest.json` file from this project
+5. The plugin will now appear in the **Plugins > Development** menu
+
+## 📁 Project Structure
+
+```
+figma-react-template/
+├── dist/                   # Build output
+├── src/
+│   ├── plugin/             # Plugin code (runs in Figma)
+│   │   └── index.ts        # Main plugin code
+│   └── ui/                 # UI code (runs in WebView)
+│       ├── app/
+│       │   ├── app.tsx     # Main React component
+│       │   ├── app.css     # Styles
+│       │   └── main.tsx    # React entry point
+│       ├── index.html      # HTML template
+│       └── vite-env.d.ts   # Vite environment types
+├── .gitignore
+├── eslint.config.js        # ESLint configuration
+├── manifest.json           # Figma plugin manifest
+├── package.json            # Project dependencies and scripts
+├── tsconfig.json           # TypeScript configuration
+├── tsconfig.app.json       # TypeScript config for app
+├── tsconfig.node.json      # TypeScript config for Node
+├── vite.plugin.config.ts   # Vite config for plugin
+└── vite.ui.config.ts       # Vite config for UI
+```
+
+## 🔄 Plugin-UI Communication
+
+The plugin and UI communicate using the `postMessage` API:
+
+- UI to Plugin: `parent.postMessage({ pluginMessage: { /* your data */ } }, '*')`
+- Plugin to UI: `figma.ui.postMessage({ /* your data */ })`
+
+Example from this template:
+- UI sends a message to create rectangles with a count
+- Plugin receives the message and creates the specified number of rectangles
+
+## 📝 Customizing the Plugin
+
+1. Update `manifest.json` with your plugin details
+   - **Important**: Make sure to change the `name` and `id` in the manifest.json file to your own. The `id` should be unique for your plugin.
+2. Modify the UI components in `src/ui/app/`
+3. Update the plugin logic in `src/plugin/index.ts`
+
+## 📚 Resources
+
+- [Figma Plugin API Documentation](https://www.figma.com/plugin-docs/api/api-overview/)
+- [React Documentation](https://react.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Vite Documentation](https://vitejs.dev/guide/)
+
+## 📄 License
+
+This project is licensed under the MIT License.

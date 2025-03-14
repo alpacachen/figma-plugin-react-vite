@@ -1,6 +1,6 @@
 {
-  "name": "figma-react-template",
-  "id": "1481960606020883943",
+  "name": "your-plugin-name",
+  "id": "your-plugin-id",
   "api": "1.0.0",
   "main": "dist/plugin.js",
   "capabilities": [],
