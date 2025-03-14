@@ -1,8 +1,34 @@
 # Figma React Plugin Template
 
-English | [简体中文](./README.zh-CN.md)
+<div align="center">
+  <a href="https://figma.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" width="40" height="40"/>
+  </a>
+  <a href="https://react.dev">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="45" height="40"/>
+  </a>
+  <a href="https://www.typescriptlang.org">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript" width="40" height="40"/>
+  </a>
+  <a href="https://vitejs.dev">
+    <img src="https://vitejs.dev/logo.svg" alt="Vite" width="40" height="40"/>
+  </a>
+</div>
 
-A modern Figma plugin template built with React, TypeScript, and Vite.
+<div align="center">
+  <p><strong>English</strong> | <a href="./README.zh-CN.md">简体中文</a></p>
+  <p>A modern Figma plugin template built with React, TypeScript, and Vite.</p>
+</div>
+
+<div align="center">
+  <img src="https://img.shields.io/badge/React-19-blue?logo=react" alt="React 19"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript" alt="TypeScript 5.7"/>
+  <img src="https://img.shields.io/badge/Vite-6.2-646CFF?logo=vite" alt="Vite 6.2"/>
+  <img src="https://img.shields.io/badge/Figma-Plugin-F24E1E?logo=figma" alt="Figma Plugin"/>
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
+</div>
+
+<br/>
 
 ## 📋 Overview
 
